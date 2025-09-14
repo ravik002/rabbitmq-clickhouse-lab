@@ -1,0 +1,32 @@
+{
+  "name": "rabbitmq-clickhouse-lab",
+  "version": "1.0.0",
+  "description": "RabbitMQ ClickHouse detailed Poc",
+  "keywords": [
+    "Event-Driven",
+    "Architecture",
+    "RabbitMQ",
+    "ClickHouse",
+    "Publisher",
+    "Subscriber"
+  ],
+  "homepage": "https://github.com/ravik002/rabbitmq-clickhouse-lab#readme",
+  "bugs": {
+    "url": "https://github.com/ravik002/rabbitmq-clickhouse-lab/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravik002/rabbitmq-clickhouse-lab.git"
+  },
+  "license": "ISC",
+  "author": "Ravishankar kaushal",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.9",
+    "express": "^5.1.0"
+  }
+}

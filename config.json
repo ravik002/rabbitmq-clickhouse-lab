@@ -1,0 +1,3 @@
+{
+    "rabbitMQEndpoint": "amqp://localhost:5672"
+}
