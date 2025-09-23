@@ -15,24 +15,18 @@ A hands-on learning project exploring **Event-Driven Architecture** using **Rabb
 - **ClickHouse** (event storage & analytics)
 - **Docker** (to run RabbitMQ & ClickHouse locally)
 
+## ✅ Prerequisites
+- Ensure that ClickHouse is set up with the following:
+  - **2 tables** (for event storage and processing).
+  - **1 Materialized View** (to pull data from the RabbitMQ engine table into the target table).
+
+
 ## 🚀 Running the Project
 
-1. **Start RabbitMQ container:**
+1. **Start RabbitMQ & ClickHouse containers via Docker Compose:**
    ```bash
-   docker run -d --name rabbitmq \
-     -p 5672:5672 \
-     -p 15672:15672 \
-     rabbitmq:3-management
-    
-
-2. **Start ClickHouse container:**
-    ```bash
-    docker run -d --name clickhouse \
-    -p 8123:8123 \
-    -p 9000:9000 \
-    clickhouse/clickhouse-server
+   docker compose up -d
 
 3. **Run producer and consumer services:**
     ```bash
-    NODE_ENV=local node index.js
-
+    node index.js
