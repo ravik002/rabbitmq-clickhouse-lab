@@ -6,9 +6,9 @@ const { getRabbitMQChannel } = require('../datastore/connection')
 module.exports.publishEvent = async function (data, routingKey) {
     const channel = await getRabbitMQChannel();
 
-    await channel.assertExchange(USERS_EXCHANGE, 'topic', { durable: false });
+    await channel.assertExchange(USERS_EXCHANGE, 'topic', { durable: true });
 
-    await channel.assertQueue(USERS_QUEUE, { durable: false });
+    await channel.assertQueue(USERS_QUEUE, { durable: true });
     await channel.bindQueue(USERS_QUEUE, USERS_EXCHANGE, 'user.*');
 
     await channel.publish(USERS_EXCHANGE, routingKey, Buffer.from(JSON.stringify(data)))

@@ -1,6 +1,5 @@
 const express = require('express');
 const { publishEvent } = require('./producer/producer');
-const { consumeEvent } = require('./consumer/consumer')
 
 const app = express();
 
@@ -11,7 +10,6 @@ app.post('/users/signup', async (req, res, next) => {
 
     if(userDetails) {
         await publishEvent(userDetails, 'user.created');
-        await consumeEvent();
     }
 
     res.status(201).send({status: 'SUCCESS'})
